@@ -30,11 +30,21 @@ The system is built on a serverless AWS architecture. The core logic is as follo
 ├── README.md
 ├── src/
 │   ├── __init__.py
-│   └── ... (source code for Lambda functions)
+│   └── user_management.py
 └── tests/
     ├── __init__.py
-    └── ... (test code)
+    └── test_user_management.py
 ```
+
+## Core Components
+
+### User Management (`src.user_management`)
+
+*   `create_user(username: str) -> dict`:
+    *   **Purpose**: Generates a new user profile.
+    *   **Arguments**:
+        *   `username` (str): The user's identifier, typically an email.
+    *   **Returns**: A dictionary containing the `username`, a new `totp_secret` (for storing), and a `qr_code_uri` (for displaying to the user).
 
 ## Development
 
