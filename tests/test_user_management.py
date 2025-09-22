@@ -13,5 +13,5 @@ def test_create_user_generates_totp_secret():
     assert user_data["username"] == username
     assert "totp_secret" in user_data
     assert "qr_code_uri" in user_data
-    assert user_data["totp"] is not None
+    assert user_data["totp_secret"] is not None
     assert user_data["qr_code_uri"] is not None
