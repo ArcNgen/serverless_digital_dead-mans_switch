@@ -23,4 +23,3 @@ def create_user(username: str) -> dict:
         "totp_secret": totp_secret,
         "qr_code_uri": qr_code_uri
     }
-    
