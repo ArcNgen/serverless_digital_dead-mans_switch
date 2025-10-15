@@ -23,3 +23,19 @@ def create_user(username: str) -> dict:
         "totp_secret": totp_secret,
         "qr_code_uri": qr_code_uri
     }
+    
+def verify_totp(totp_code: str, totp_secrect: str) -> bool:
+    """
+    Verifies a provided TOTP code against the user's TOTP secret.
+    
+    Args:
+        totp_code: The TOTP code to verify.
+        totp_secrect: The user's TOTP secret.
+        
+    Returns:
+        True if the code is valid, False otherwise.
+    """
+    
+    totp = pyotp.TOTP(totp_secrect)
+    return totp.verify(totp_code)
+
