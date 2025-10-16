@@ -1,2 +1,6 @@
 pyotp
 pytest
+boto3
+moto
+pytest-mock
+requests

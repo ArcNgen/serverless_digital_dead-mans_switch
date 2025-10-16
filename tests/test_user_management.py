@@ -1,6 +1,8 @@
 # test/test_user_management.py
 import pytest
 import pyotp
+import boto3
+from moto import mock_dynamodb
 from src.user_management import create_user
 from src.user_management import verify_totp
 
